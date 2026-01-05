@@ -31,17 +31,21 @@ analytics_service = HabitAnalyticsService()
 recommendation_service = HabitRecommendationService()
 habit_service = HabitService(habit_repo, analytics_service, recommendation_service)
 
-# Sample habits
+# Sample habits with higher completion rates for demonstration (over 7 days)
 habits = [
-    Habit(1, "Exercise", 3, date.today() - timedelta(days=15),
-          [date.today() - timedelta(days=i) for i in [1,3,4,5]]),
-    Habit(2, "Reading", 2, date.today() - timedelta(days=10),
-          [date.today() - timedelta(days=i) for i in [2,5]]),
-    Habit(3, "Meditation", 1, date.today() - timedelta(days=20), []),
+    Habit(1, "Exercise", 3, date.today() - timedelta(days=7),
+          [date.today() - timedelta(days=i) for i in [1,2,3,4,5,6,7]]),  # High consistency ~87.5%
+    Habit(2, "Reading", 2, date.today() - timedelta(days=7),
+          [date.today() - timedelta(days=i) for i in [1,2,3,4,5,6]]),  # High consistency ~85.7%
+    Habit(3, "Meditation", 1, date.today() - timedelta(days=7), [date.today() - timedelta(days=3)]),  # Low but some consistency ~14.3%
     Habit(4, "Drink Water", 7, date.today() - timedelta(days=7),
-          [date.today() - timedelta(days=i) for i in range(5)]),
-    Habit(5, "Code Practice", 5, date.today() - timedelta(days=12),
-          [date.today() - timedelta(days=i) for i in [0,1,2,4,5,7]]),
+          [date.today() - timedelta(days=i) for i in range(7)]),  # Perfect weekly habit ~100%
+    Habit(5, "Code Practice", 5, date.today() - timedelta(days=7),
+          [date.today() - timedelta(days=i) for i in [0,1,2,3,4,5,6]]),  # High consistency ~87.5%
+    Habit(6, "Healthy Eating", 4, date.today() - timedelta(days=7),
+          [date.today() - timedelta(days=i) for i in [1,2,3,4,5]]),  # High consistency ~71.4%
+    Habit(7, "Sleep Early", 6, date.today() - timedelta(days=7),
+          [date.today() - timedelta(days=i) for i in [1,2,3,4,5,6,7]]),  # Excellent streak ~100%
 ]
 
 for h in habits:
@@ -74,7 +78,7 @@ def dashboard():
         recs = recommendation_service.recommend(h)
         habit_data.append({
             'name': h.name,
-            'consistency': round(consistency, 2),
+            'consistency': round(consistency * 100, 2),
             'streak': streak,
             'recommendations': recs
         })
@@ -92,7 +96,7 @@ def habits_page():
         recs = recommendation_service.recommend(h)
         habit_data.append({
             'name': h.name,
-            'consistency': round(consistency, 2),
+            'consistency': round(consistency * 100, 2),
             'streak': streak,
             'recommendations': recs
         })

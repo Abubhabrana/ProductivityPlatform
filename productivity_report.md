@@ -2,25 +2,25 @@
 
 | Task | Priority | Duration (min) |
 |------|---------|----------------|
-| Finish report | Priority.HIGH | N/A |
-| Email client | Priority.HIGH | N/A |
 | Prepare slides | Priority.HIGH | N/A |
 | Team meeting | Priority.HIGH | N/A |
-| Update project plan | Priority.HIGH | N/A |
-| Clean workspace | Priority.HIGH | N/A |
-| Call supplier | Priority.HIGH | N/A |
 | Design review | Priority.HIGH | N/A |
-| Write documentation | Priority.HIGH | N/A |
+| Finish report | Priority.MEDIUM | N/A |
+| Update project plan | Priority.MEDIUM | N/A |
+| Call supplier | Priority.MEDIUM | N/A |
+| Write documentation | Priority.MEDIUM | N/A |
+| Email client | Priority.LOW | N/A |
+| Clean workspace | Priority.LOW | N/A |
 
 # 📊 Habit Analytics & Recommendations
 
 ## Habit: **Exercise**
-- **Consistency:** 0.25
+- **Consistency:** 0.50
 - **Current Streak:** 0 days
 - **Recommendations:**
-  - Your consistency is moderate, keep building momentum!
+  - Great consistency! You may increase difficulty or frequency.
 ## Habit: **Reading**
-- **Consistency:** 0.18
+- **Consistency:** 0.27
 - **Current Streak:** 0 days
 - **Recommendations:**
   - Your consistency is moderate, keep building momentum!
@@ -30,15 +30,25 @@
 - **Recommendations:**
   - Start small: aim to complete this habit at least once this week.
 ## Habit: **Drink Water**
-- **Consistency:** 0.62
-- **Current Streak:** 5 days
+- **Consistency:** 0.88
+- **Current Streak:** 7 days
 - **Recommendations:**
   - Keep going! You're doing well.
 ## Habit: **Code Practice**
-- **Consistency:** 0.46
+- **Consistency:** 0.62
 - **Current Streak:** 3 days
 - **Recommendations:**
-  - Your consistency is moderate, keep building momentum!
+  - Keep going! You're doing well.
+## Habit: **Healthy Eating**
+- **Consistency:** 0.55
+- **Current Streak:** 0 days
+- **Recommendations:**
+  - Keep going! You're doing well.
+## Habit: **Sleep Early**
+- **Consistency:** 0.87
+- **Current Streak:** 0 days
+- **Recommendations:**
+  - Great consistency! You may increase difficulty or frequency.
 
 # 🖥 Code Analyzer Report
 
