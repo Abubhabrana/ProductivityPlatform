@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}وظایف - پلتفرم بهره‌وری شخصی{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card p-4">
+            <h1 class="text-center mb-4">⏰ برنامه‌ریزی وظایف</h1>
+            <p class="text-center text-muted">وظایف شما بر اساس اولویت و عادات مرتب شده‌اند</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    {% for task in tasks %}
+    <div class="col-md-6 mb-4">
+        <div class="card stat-card p-4">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <h5 class="card-title">{{ task.title }}</h5>
+                    <span class="badge
+                        {% if task.priority.name == 'HIGH' %}bg-danger
+                        {% elif task.priority.name == 'MEDIUM' %}bg-warning
+                        {% else %}bg-success{% endif %}">
+                        {{ task.priority.name }}
+                    </span>
+                </div>
+                <div class="row text-center">
+                    <div class="col-6">
+                        <h6 class="text-info">{{ task.estimated_minutes }} دقیقه</h6>
+                        <small class="text-muted">زمان تخمینی</small>
+                    </div>
+                    <div class="col-6">
+                        <h6 class="text-secondary">{{ task.deadline.strftime('%H:%M') }}</h6>
+                        <small class="text-muted">ددلاین</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

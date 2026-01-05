@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}داشبورد - پلتفرم بهره‌وری شخصی{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card p-4">
+            <h1 class="text-center mb-4">🏠 داشبورد بهره‌وری</h1>
+            <p class="text-center text-muted">نمای کلی از عادات، وظایف و تحلیل کد شما</p>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-4 mb-4">
+        <div class="card stat-card text-center p-4">
+            <div class="card-body">
+                <i class="bi bi-calendar-check display-4 text-primary mb-3"></i>
+                <h3 class="card-title">{{ habits|length }}</h3>
+                <p class="card-text">عادات فعال</p>
+                <a href="{{ url_for('habits_page') }}" class="btn btn-primary">مشاهده عادات</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card stat-card text-center p-4">
+            <div class="card-body">
+                <i class="bi bi-list-task display-4 text-success mb-3"></i>
+                <h3 class="card-title">{{ tasks|length }}</h3>
+                <p class="card-text">وظایف برنامه‌ریزی شده</p>
+                <a href="{{ url_for('tasks_page') }}" class="btn btn-primary">مشاهده وظایف</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card stat-card text-center p-4">
+            <div class="card-body">
+                <i class="bi bi-code-slash display-4 text-info mb-3"></i>
+                <h3 class="card-title">آنالیز</h3>
+                <p class="card-text">کیفیت کد</p>
+                <a href="{{ url_for('code_analysis') }}" class="btn btn-primary">مشاهده تحلیل</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">🔄 خلاصه عادات</h5>
+            </div>
+            <div class="card-body">
+                {% for habit in habits[:3] %}
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span>{{ habit.name }}</span>
+                    <div>
+                        <span class="badge bg-primary">{{ habit.consistency }}%</span>
+                        <span class="badge bg-success ms-1">{{ habit.streak }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+                <a href="{{ url_for('habits_page') }}" class="btn btn-sm btn-outline-primary mt-2">مشاهده همه</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">⏰ وظایف اولویت‌دار</h5>
+            </div>
+            <div class="card-body">
+                {% for task in tasks[:3] %}
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span>{{ task.title }}</span>
+                    <span class="badge
+                        {% if task.priority.name == 'HIGH' %}bg-danger
+                        {% elif task.priority.name == 'MEDIUM' %}bg-warning
+                        {% else %}bg-success{% endif %}">
+                        {{ task.priority.name }}
+                    </span>
+                </div>
+                {% endfor %}
+                <a href="{{ url_for('tasks_page') }}" class="btn btn-sm btn-outline-primary mt-2">مشاهده همه</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">📊 تولید گزارش</h5>
+                <a href="{{ url_for('generate_report') }}" class="btn btn-success">
+                    <i class="bi bi-file-earmark-text me-1"></i>
+                    تولید گزارش مارک‌داون
+                </a>
+            </div>
+            <div class="card-body">
+                <p class="mb-0">گزارش کاملی شامل تحلیل عادات، برنامه وظایف و مشکلات کد تولید کنید.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

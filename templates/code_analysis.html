@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}تحلیل کد - پلتفرم بهره‌وری شخصی{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card p-4">
+            <h1 class="text-center mb-4">🔍 تحلیل‌گر کد</h1>
+            <p class="text-center text-muted">بررسی کیفیت و مشکلات کد برنامه‌نویسی</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    {% for file_path, issues in results.items() %}
+    <div class="col-12 mb-4">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">{{ file_path }}</h5>
+                {% if issues %}
+                <span class="badge bg-danger">{{ issues|length }} مشکل</span>
+                {% else %}
+                <span class="badge bg-success">بدون مشکل ✅</span>
+                {% endif %}
+            </div>
+            <div class="card-body">
+                {% if issues %}
+                <ul class="list-group list-group-flush">
+                    {% for issue in issues %}
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="bi bi-exclamation-triangle text-warning me-2"></i>
+                        {{ issue }}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <div class="text-center text-success">
+                    <i class="bi bi-check-circle display-4 mb-3"></i>
+                    <p>هیچ مشکلی در این فایل یافت نشد!</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

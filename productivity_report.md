@@ -3,14 +3,14 @@
 | Task | Priority | Duration (min) |
 |------|---------|----------------|
 | Finish report | Priority.HIGH | N/A |
+| Email client | Priority.HIGH | N/A |
 | Prepare slides | Priority.HIGH | N/A |
 | Team meeting | Priority.HIGH | N/A |
 | Update project plan | Priority.HIGH | N/A |
+| Clean workspace | Priority.HIGH | N/A |
 | Call supplier | Priority.HIGH | N/A |
 | Design review | Priority.HIGH | N/A |
 | Write documentation | Priority.HIGH | N/A |
-| Email client | Priority.MEDIUM | N/A |
-| Clean workspace | Priority.MEDIUM | N/A |
 
 # 📊 Habit Analytics & Recommendations
 
